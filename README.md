@@ -42,7 +42,7 @@ Before running the project, ensure the following software is installed:
 Clone the repository.
 
 ```bash
-git clone https://github.com/woofya/Owner-Progress-Reports.git
+git clone https://github.com/Shane-Leung/pet-care-analytics-dashboard.git
 cd Owner-Progress-Reports
 ```
 
