@@ -1,0 +1,42 @@
+-------------------------------------------------------------
+WOOFYA OWNER PROGRESS REPORTS
+Data Management Information
+-------------------------------------------------------------
+
+Database Type:
+Unknown (client never specified)
+
+Database Version:
+Unknown (client never specified)
+
+Database Hosting:
+Cloud-hosted via Directus CMS instance
+
+Connection Protocol:
+- REST API (HTTPS-based)
+- Directus Data API endpoints are used for CRUD operations and data retrieval.
+
+Authentication Method:
+- Bearer Token
+- Each request includes an Authorisation header with a Directus API access token.
+
+Example:
+Authorization: Bearer 5hduYIeKcDRyovhccg76NvZK-MJMlNgv
+
+Database Access Layer:
+- PHP 8.2 backend scripts using cURL for API requests
+- JavaScript (frontend) fetch requests for Directus endpoints
+- Data stored and cached in browser localStorage
+
+Security and Access Control:
+- HTTPS enforced for all connections
+- Token-based authentication with role-based access
+- Sensitive credentials stored in `config.php` (not public)
+- Example config file:
+    config['directus_url']   = 'https://admin.woofya.com/';
+    config['directus_token'] = '<API_TOKEN>';
+    config['default_email']  = '<USER_EMAIL>';
+
+Environment:
+- Development: Localhost (PHP Server)
+- Database synchronized automatically with Directus Cloud
