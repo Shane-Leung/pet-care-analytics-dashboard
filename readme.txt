@@ -4,11 +4,9 @@
 
 Owner Progress Reports is a mobile-first web application developed for Woofya to provide pet owners with data-driven insights into their pet's activity, wellbeing, and challenge progression. The application integrates with the Directus CMS to retrieve and visualise live data through an intuitive dashboard experience.
 
----
+## Features
 
-## Key Features
-
-* Five user-facing dashboard pages:
+* Five integrated dashboard pages
 
   * Journal
   * Progress
@@ -16,50 +14,28 @@ Owner Progress Reports is a mobile-first web application developed for Woofya to
   * Challenge Progress
   * Goal Progress
 * Directus API integration for live activity and mood data
-* Dynamic progress visualisations using Chart.js
-* Challenge and streak tracking
-* Responsive mobile-first user interface
-* Configurable local user login via email query parameter
-
----
+* Dynamic activity and progress visualisations using Chart.js
+* Challenge streak tracking
+* Mobile-first responsive interface
+* Configurable local user authentication via email query parameter
 
 ## Technology Stack
 
-| Category           | Technologies                       |
+| Layer              | Technology                         |
 | ------------------ | ---------------------------------- |
 | Frontend           | HTML, CSS, Bootstrap 5, JavaScript |
 | Backend            | PHP 8                              |
 | Data Visualisation | Chart.js                           |
-| CMS / API          | Directus                           |
-
----
-
-## Repository
-
-**GitHub Repository**
-
-https://github.com/woofya/Owner-Progress-Reports
-
-**Production URL**
-
-https://woofya.com/app/signin
-
-> The production environment is currently unavailable.
-
----
-
-# Getting Started
+| CMS / API          | Directus CMS                       |
 
 ## Prerequisites
 
-Ensure the following software is installed before running the project:
+Before running the project, ensure the following software is installed:
 
 * PHP 8.0 or later
-* Local web server (MAMP, XAMPP or VS Code PHP Server)
+* Local PHP server (MAMP, XAMPP, or VS Code PHP Server)
 * Modern web browser
 * Internet connection (required for Directus API requests)
-
----
 
 ## Installation
 
@@ -69,8 +45,6 @@ Clone the repository.
 git clone https://github.com/woofya/Owner-Progress-Reports.git
 cd Owner-Progress-Reports
 ```
-
----
 
 ## Configuration
 
@@ -97,67 +71,57 @@ $config['email'] = !empty($_GET['email'])
     : $config['default_email'];
 ```
 
-> **Note:** Do not commit production credentials or API tokens to the repository.
-
----
+> **Important:** Never commit production credentials or API tokens to the repository.
 
 ## Running the Application
 
-Start the PHP development server:
+Start the PHP development server.
 
 ```bash
 php -S localhost:8000
 ```
 
-Navigate to:
+Open the application in your browser.
 
 ```text
 http://localhost:8000/app/progress.php
 ```
 
-To test with a different user:
+To test a different user locally:
 
 ```text
 http://localhost:8000/app/progress.php?email=user@example.com
 ```
 
----
-
 ## Project Structure
 
 ```text
 Owner-Progress-Reports/
-│
 ├── app/
-│   ├── journal.php
-│   ├── progress.php
-│   ├── leaderboard.php
 │   ├── challenge-progress.php
 │   ├── goal-progress.php
+│   ├── journal.php
+│   ├── leaderboard.php
+│   ├── progress.php
 │   ├── includes/
 │   └── config.php
-│
 ├── assets/
 ├── css/
 ├── js/
 └── README.md
 ```
 
----
+## Current Release
 
-## Release Notes
+The current release includes:
 
-Current release includes:
-
-* Complete implementation of five dashboard pages
+* Complete implementation of all five dashboard pages
 * Live Directus API integration
 * Dynamic activity and progress visualisations
 * Challenge streak tracking
 * Mobile-first responsive design
-* Configurable local user authentication
+* Configurable local development environment
 
----
+## License
 
-## Authors
-
-Developed as part of the Woofya Owner Progress Reports project.
+This project is licensed under the MIT License.
