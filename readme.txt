@@ -1,59 +1,163 @@
+# Owner Progress Reports
 
----------------------------
-1. RELEASE NOTES
----------------------------
-- Full 5-page implementation (Journal, Progress, Leaderboard, Challenge Progress, Goal Progress)
-- Directus API integration for live mood/activity data
-- Mobile-first UI using Bootstrap + custom CSS
-- Challenge streak tracking and dynamic chart rendering
-- Configurable user login via email query parameter (local version)
+## Overview
 
----------------------------
-2. REPOSITORY AND URL'S
----------------------------
+Owner Progress Reports is a mobile-first web application developed for Woofya to provide pet owners with data-driven insights into their pet's activity, wellbeing, and challenge progression. The application integrates with the Directus CMS to retrieve and visualise live data through an intuitive dashboard experience.
 
-Github URL: https://github.com/woofya/Owner-Progress-Reports
+---
 
-URL deploy project (not deployed currently): https://woofya.com/app/signin
+## Key Features
 
----------------------------
-3. DEPLOYMENT INSTRUCTIONS
----------------------------
+* Five user-facing dashboard pages:
 
----------------------------
-PRE-CONDITIONS
----------------------------
-Before running the project, make sure you have the following installed:
+  * Journal
+  * Progress
+  * Leaderboard
+  * Challenge Progress
+  * Goal Progress
+* Directus API integration for live activity and mood data
+* Dynamic progress visualisations using Chart.js
+* Challenge and streak tracking
+* Responsive mobile-first user interface
+* Configurable local user login via email query parameter
 
- - PHP 8.0+: Required to run backend files (e.g., `includes/progress.php`).
- - Local Server: Use MAMP, XAMPP, or VS Code PHP Server extension.
- - Modern Browser: Chrome, Edge, or Firefox recommended.
- - Internet Connection: Needed to fetch live data from the Woofya API.
+---
 
+## Technology Stack
 
----------------------------
-DEPLOYMENT
----------------------------
+| Category           | Technologies                       |
+| ------------------ | ---------------------------------- |
+| Frontend           | HTML, CSS, Bootstrap 5, JavaScript |
+| Backend            | PHP 8                              |
+| Data Visualisation | Chart.js                           |
+| CMS / API          | Directus                           |
 
-1. Open the OWNER-PROGRESS-REPORTS folder in VS Code.  
-2. Create or verify your configuration file at: app/config.php
- - note: refer to credentials.txt or use example:
-Example:
+---
 
-php
+## Repository
+
+**GitHub Repository**
+
+https://github.com/woofya/Owner-Progress-Reports
+
+**Production URL**
+
+https://woofya.com/app/signin
+
+> The production environment is currently unavailable.
+
+---
+
+# Getting Started
+
+## Prerequisites
+
+Ensure the following software is installed before running the project:
+
+* PHP 8.0 or later
+* Local web server (MAMP, XAMPP or VS Code PHP Server)
+* Modern web browser
+* Internet connection (required for Directus API requests)
+
+---
+
+## Installation
+
+Clone the repository.
+
+```bash
+git clone https://github.com/woofya/Owner-Progress-Reports.git
+cd Owner-Progress-Reports
+```
+
+---
+
+## Configuration
+
+Create the following configuration file:
+
+```text
+app/config.php
+```
+
+Example configuration:
+
+```php
 <?php
+
 $config = [];
 
-// Base API Configuration
-$config['directus_url']   = 'https://admin.woofya.com/';
-$config['directus_token'] = '5hduYIeKcDRyovhccg76NvZK-MJMlNgv';
+$config['directus_url'] = 'https://admin.woofya.com/';
+$config['directus_token'] = 'YOUR_DIRECTUS_TOKEN';
 
-// Default Email for Local Testing
-$config['default_email']  = 'gazihoque95@gmail.com';
-$config['email'] = !empty($_GET['email']) ? $_GET['email'] : $config['default_email'];
+$config['default_email'] = 'example@email.com';
 
-?>
+$config['email'] = !empty($_GET['email'])
+    ? $_GET['email']
+    : $config['default_email'];
+```
 
-3. Start PHP local server in bash terminal: php -S localhost:8000
-4. Open browser and go to: http://localhost:8000/app/progress.php
+> **Note:** Do not commit production credentials or API tokens to the repository.
 
+---
+
+## Running the Application
+
+Start the PHP development server:
+
+```bash
+php -S localhost:8000
+```
+
+Navigate to:
+
+```text
+http://localhost:8000/app/progress.php
+```
+
+To test with a different user:
+
+```text
+http://localhost:8000/app/progress.php?email=user@example.com
+```
+
+---
+
+## Project Structure
+
+```text
+Owner-Progress-Reports/
+│
+├── app/
+│   ├── journal.php
+│   ├── progress.php
+│   ├── leaderboard.php
+│   ├── challenge-progress.php
+│   ├── goal-progress.php
+│   ├── includes/
+│   └── config.php
+│
+├── assets/
+├── css/
+├── js/
+└── README.md
+```
+
+---
+
+## Release Notes
+
+Current release includes:
+
+* Complete implementation of five dashboard pages
+* Live Directus API integration
+* Dynamic activity and progress visualisations
+* Challenge streak tracking
+* Mobile-first responsive design
+* Configurable local user authentication
+
+---
+
+## Authors
+
+Developed as part of the Woofya Owner Progress Reports project.
